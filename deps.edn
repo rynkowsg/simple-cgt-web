@@ -1,0 +1,23 @@
+{:paths ["app/main/src"]
+
+ :deps
+ {;; sorted
+  integrant/integrant {:mvn/version "0.8.1"}
+  org.clojure/clojure {:mvn/version "1.11.2"}
+  #_:deps}
+
+ :aliases
+ {:dev
+  {:extra-paths ["app/dev/src"]}
+
+  ;; only required at lein build time for native-image
+  :native
+  {:extra-deps {com.github.clj-easy/graal-build-time {:mvn/version "1.0.5"}}}
+
+  :prod
+  {:extra-paths ["app/prod/src"]}
+
+  :repl
+  {:extra-paths ["app/repl/src"]
+   :extra-deps {;; sorted
+                #_:extra-deps}}}}
